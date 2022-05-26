@@ -53,4 +53,3 @@ class ReceiptCustomer(BaseObject):
     @phone.setter
     def phone(self, value):
         self.__phone = str(value)
-

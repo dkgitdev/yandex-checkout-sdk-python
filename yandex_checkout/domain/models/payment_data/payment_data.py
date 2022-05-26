@@ -47,4 +47,3 @@ class ResponsePaymentData(PaymentData):
     @title.setter
     def title(self, value):
         self.__title = str(value)
-

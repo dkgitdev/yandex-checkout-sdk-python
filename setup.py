@@ -8,14 +8,7 @@ except ImportError:
 long_description = """
 # Yandex.Checkout API Python Client Library
 
-[![Build Status](https://travis-ci.org/yandex-money/yandex-checkout-sdk-python.svg?branch=master)](https://travis-ci.org/yandex-money/yandex-checkout-sdk-python)
-[![Latest Stable Version](https://img.shields.io/pypi/v/yandex-checkout.svg)](https://pypi.org/project/yandex-checkout/)
-[![Total Downloads](https://img.shields.io/pypi/dm/yandex-checkout.svg)](https://pypi.org/project/yandex-checkout/)
-[![License](https://img.shields.io/pypi/l/yandex-checkout.svg)](https://github.com/yandex-money/yandex-checkout-sdk-python)
-
-[Russian](https://github.com/yandex-money/yandex-checkout-sdk-python/blob/master/README.md) | English
-
-This product is used for managing payments under [The Yandex.Checkout API](https://kassa.yandex.ru/docs/checkout-api/)
+This product is used for managing payments under old The Yandex.Checkout API
 For usage by those who implemented Yandex.Checkout using the API method.
 
 ## Requirements
@@ -28,26 +21,15 @@ For usage by those who implemented Yandex.Checkout using the API method.
 1. Install pip.
 2. In the console, run the following command:
 ```bash
-pip install --upgrade yandex_checkout
+pip install --upgrade yandex_checkout_ng
 ```
 
 ### Under console using easy_install
 1. Install easy_install.
 2. In the console, run the following command:
 ```bash
-easy_install --upgrade yandex_checkout
+easy_install --upgrade yandex_checkout_ng
 ```
-
-### Manually
-
-1. In the console, run the following command:
-```bash
-wget https://pypi.python.org/packages/5a/be/5eafdfb14aa6f32107e9feb6514ca1ad3fe56f8e5ee59d20693b32f7e79f/yandex_checkout-1.0.0.tar.gz#md5=46595279b5578fd82a199bfd4cd51db2
-tar zxf yandex_checkout-1.0.0.tar.gz
-cd yandex_checkout-1.0.0
-python setup.py install
-```
-
 
 ## Commencing work
 
@@ -94,16 +76,16 @@ Configuration.configure_user_agent(
 )
 ```
 
-3. Call the required API method. [More details in our documentation for the Yandex.Checkout API](url)
+3. Call the required API method.
 """
 
 setup(
-    name="yandex_checkout",
-    version="1.5.1",
+    name="yandex_checkout_ng",
+    version="1.6.6",
     description="Yandex Checkout SDK Python Library",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/yandex-money/yandex-checkout-sdk-python",
+    url="https://github.com/dkgitdev/yandex-checkout-ng",
     author="Yandex.Money",
     packages=["yandex_checkout", "yandex_checkout.domain.request", "yandex_checkout.domain.response",
               "yandex_checkout.domain.notification", "yandex_checkout.domain.models", "yandex_checkout.domain",

@@ -2,9 +2,11 @@
 from yandex_checkout.domain.common.request_object import RequestObject
 from yandex_checkout.domain.models.amount import Amount
 from yandex_checkout.domain.models.receipt import Receipt
+from yandex_checkout.domain.models.refund_source import RefundSource
 
 
 class RefundRequest(RequestObject):
+
     __payment_id = None
 
     __amount = None
@@ -12,6 +14,8 @@ class RefundRequest(RequestObject):
     __description = None
 
     __receipt = None
+
+    __sources = []
 
     @property
     def payment_id(self):
@@ -49,6 +53,19 @@ class RefundRequest(RequestObject):
             self.__description = cast_value
         else:
             raise ValueError('Invalid commend value')
+
+    @property
+    def sources(self):
+        return self.__sources
+
+    @sources.setter
+    def sources(self, value):
+        if isinstance(value, list):
+            self.__sources = [RefundSource(item) for item in value]
+        elif value is None:
+            self.__sources = []
+        else:
+            raise TypeError('Invalid sources data type in refund_request.sources')
 
     @property
     def receipt(self):

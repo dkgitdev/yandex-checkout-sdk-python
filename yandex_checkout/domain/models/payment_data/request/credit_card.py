@@ -22,7 +22,7 @@ class CreditCard(BaseObject):
     @number.setter
     def number(self, value):
         cast_value = str(value)
-        if re.match('^[0-9]{12,19}$', cast_value):
+        if re.match(r'^[0-9]{12,19}$', cast_value):
             self.__number = cast_value
         else:
             raise ValueError('Invalid card number value')
@@ -34,7 +34,7 @@ class CreditCard(BaseObject):
     @expiry_year.setter
     def expiry_year(self, value):
         cast_value = str(value)
-        if re.match('^\d\d\d\d$', cast_value) and 2000 < int(cast_value) < 2200:
+        if re.match(r'^\d\d\d\d$', cast_value) and 2000 < int(cast_value) < 2200:
             self.__expiry_year = cast_value
         else:
             raise ValueError('Invalid card expiry year value')
@@ -46,7 +46,7 @@ class CreditCard(BaseObject):
     @expiry_month.setter
     def expiry_month(self, value):
         cast_value = str(value)
-        if re.match('^\d\d$', cast_value) and 0 < int(cast_value) <= 12:
+        if re.match(r'^\d\d$', cast_value) and 0 < int(cast_value) <= 12:
             self.__expiry_month = cast_value
         else:
             raise ValueError('Invalid card expiry month value')
@@ -58,7 +58,7 @@ class CreditCard(BaseObject):
     @csc.setter
     def csc(self, value):
         cast_value = str(value)
-        if re.match('^\d{3,4}$', cast_value):
+        if re.match(r'^\d{3,4}$', cast_value):
             self.__csc = cast_value
         else:
             raise ValueError('Invalid card CSC code value')
@@ -70,7 +70,7 @@ class CreditCard(BaseObject):
     @cardholder.setter
     def cardholder(self, value):
         cast_value = str(value)
-        if re.match('^[a-zA-Z\s]{1,26}$', cast_value):
+        if re.match(r'^[a-zA-Z\s]{1,26}$', cast_value):
             self.__cardholder = cast_value
         else:
             raise ValueError('Invalid card holder value')

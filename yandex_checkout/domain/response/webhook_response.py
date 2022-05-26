@@ -57,6 +57,3 @@ class WebhookList(ResponseObject):
             self.__items = [WebhookResponse(webhook) for webhook in value]
         else:
             self.__items = value
-
-
-

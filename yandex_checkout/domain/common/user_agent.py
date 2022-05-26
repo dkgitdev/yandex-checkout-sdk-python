@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 import platform
 import sys
+
 import distro
+
 import yandex_checkout
 
 
@@ -129,9 +131,12 @@ class UserAgent:
     @staticmethod
     def create_version(name, version):
         strip_data = ' ' + UserAgent.PART_DELIMITER + UserAgent.VERSION_DELIMITER
-        return name.strip(strip_data).replace(UserAgent.PART_DELIMITER, '.').replace(UserAgent.VERSION_DELIMITER, '.') \
-               + UserAgent.VERSION_DELIMITER \
-               + version.strip(strip_data).replace(UserAgent.PART_DELIMITER, '.').replace(UserAgent.VERSION_DELIMITER, '.')
+        name = name.strip(strip_data).replace(UserAgent.PART_DELIMITER, '.')
+        name = name.replace(UserAgent.VERSION_DELIMITER, '.')
+        name = name + UserAgent.VERSION_DELIMITER
+        version = version.strip(strip_data).replace(UserAgent.PART_DELIMITER, '.')
+        version = version.replace(UserAgent.VERSION_DELIMITER, '.')
+        return name + version
 
 
 class Version:

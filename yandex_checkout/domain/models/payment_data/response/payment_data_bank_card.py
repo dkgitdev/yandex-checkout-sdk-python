@@ -24,4 +24,3 @@ class PaymentDataBankCard(ResponsePaymentData):
             self.__card = value
         else:
             raise TypeError('Invalid card value type in PaymentDataBankCard')
-

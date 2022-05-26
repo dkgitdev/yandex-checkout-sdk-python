@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 import uuid
 
-from yandex_checkout.domain.common.http_verb import HttpVerb
-
 from yandex_checkout.client import ApiClient
+from yandex_checkout.domain.common.http_verb import HttpVerb
 from yandex_checkout.domain.request.webhook_request import WebhookRequest
 from yandex_checkout.domain.response.webhook_response import WebhookResponse, WebhookList
 
@@ -16,9 +15,9 @@ class Webhook:
 
     """
     Get list of installed webhooks
-    
     :return: WebhookList
     """
+
     @classmethod
     def list(cls):
         instance = cls()
@@ -34,6 +33,7 @@ class Webhook:
     :param idempotency_key:
     :return: WebhookResponse
     """
+
     @classmethod
     def add(cls, params, idempotency_key=None):
         instance = cls()
@@ -56,11 +56,11 @@ class Webhook:
 
     """
     Remove webhook
-
-    :param webhook_id: 
+    :param webhook_id:
     :param idempotency_key:
     :return: WebhookResponse
     """
+
     @classmethod
     def remove(cls, webhook_id, idempotency_key=None):
         instance = cls()

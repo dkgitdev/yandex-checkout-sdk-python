@@ -22,5 +22,9 @@ class RefundRequestBuilder(object):
         self.__request.receipt = value
         return self
 
+    def set_sources(self, value):
+        self.__request.sources = value
+        return self
+
     def build(self):
         return self.__request
